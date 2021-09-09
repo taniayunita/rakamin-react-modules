@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 18px  30px;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+button {
+    background: orange;
+    border-color: orange;
+    border-radius: 5px;
+}
