@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to ReactJS</title>
+
+    <!-- Import module react (mulai mengenai Virtual DOM) namun masih menggunakn low level API belum menggunakan JSX -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- import babel agar Browser dapat membaca code JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <!-- menampilkan content dengan HTML saja -->
+    <div>
+        <h1>Hello, Tania</h1>
+        <p>ini adalah content yang ditampilkan dengan HTML saja</p>
+    </div>
+
+    <!-- menampilkan content menggunakan javascript (normal DOM) -->
+    <!-- <div id='root-db'> </div> -->
+
+    <!-- menampilkan content menggunakan javascript + react (Virtual DOM)  -->
+    <!-- <div id='root-vd'></div> -->
+
+    <!-- menampilkan content menggunakan javascript + JSX  -->
+    <div id='root-jsx'></div>
+
+    <!--membuat link file javascript
+    TAMBAHKAN type='text/babel' agar code JSX terbaca oleh browser-->
+    <script type="text/babel" src="App.js"></script>
+</body>
+</html>
