@@ -11,6 +11,7 @@ Materi yang dibahas :
   - Apa itu ReactDOM?
  
 Hands-on yang dilakukan :
+  - membuat file html + js + react + creat-react-app
 
 
 
