@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import LoginPage from './LoginPage';
 import reportWebVitals from './reportWebVitals';
+import TodoListPage from './TodoListProps'
+import TodoListPageState from './TodoListState'
+import TimerComponent from './TimerComponent';
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <TodoListPageState/>
+    <TimerComponent/> */}
+
     <LoginPage />
-  </React.StrictMode>,
+    </React.StrictMode>,
   document.getElementById('root-f')
 );
 
