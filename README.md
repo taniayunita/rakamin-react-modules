@@ -13,5 +13,14 @@ Materi yang dibahas :
 Hands-on yang dilakukan :
   - membuat file html + js + react + creat-react-app
 
+# 29 Agustus 2021
+Materi yang dibahas :
+  - Apa itu component?
+  - Apa itu State?
+  - Apa itu Props?
+
+Hands on yang dilakukan :
+  - membuat file contoh state, props dan component
+
 
 
