@@ -2,28 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import LoginPage from './LoginPage';
+import LoginPage from './pages/LoginPage';
 import reportWebVitals from './reportWebVitals';
 import TodoListPage from './TodoListProps'
 import TodoListPageState from './TodoListState'
 import TimerComponent from './TimerComponent';
 import {ThemeProvider} from './contexts/ThemeContext';
 import Header from './Header';
-import { AddNamaProvider} from './contexts/addNameContext';
 
 ReactDOM.render(
   <React.StrictMode>
+
+   <App /> 
     {/* membuat ThemeProvider sebagai parent dan yang ada didalamnya merupakan child (ini untuk hands on- state management) */}
     
-    <ThemeProvider>
+    {/* <ThemeProvider>
       <AddNamaProvider>
         <Header />
         <TodoListPageState/>
     
       {/* <TimerComponent/>
       <LoginPage /> */} 
-      </AddNamaProvider>
-    </ThemeProvider>
+      {/* </AddNamaProvider> */}
+    {/* </ThemeProvider> */} 
     </React.StrictMode>,
   document.getElementById('root-f')
 );
