@@ -9,17 +9,20 @@ import TodoListPageState from './TodoListState'
 import TimerComponent from './TimerComponent';
 import {ThemeProvider} from './contexts/ThemeContext';
 import Header from './Header';
+import { AddNamaProvider} from './contexts/addNameContext';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* membuat ThemeProvider sebagai parent dan yang ada didalamnya merupakan child (ini untuk hands on- state management) */}
     
     <ThemeProvider>
-    <Header />
-    <TodoListPageState/>
+      <AddNamaProvider>
+        <Header />
+        <TodoListPageState/>
     
-    {/* <TimerComponent/>
-    <LoginPage /> */}
+      {/* <TimerComponent/>
+      <LoginPage /> */} 
+      </AddNamaProvider>
     </ThemeProvider>
     </React.StrictMode>,
   document.getElementById('root-f')

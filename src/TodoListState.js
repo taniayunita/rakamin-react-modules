@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeContext } from './contexts/ThemeContext';
 import './TodoListPageState.css'
+import {AddNameContext} from './contexts/AddNameContext';
 
 //Belajar STATE namun disini masih menyertakan props
 
@@ -42,32 +43,33 @@ class TodoListPageState extends React.Component {
     // menerapkan penggunaan react context pada child (TodoListState Page) dari parent (ThemeContext file)
     static contextType = ThemeContext;
     state = {
-        items: [],
-        // membuat state baru dengan string kosong
         nama: '',
+        // items: [],
+        // membuat state baru dengan string kosong
+        // nama: '',
     };
 
     //melihat hasil context melalui componen didmount
-    componentDidMount(){
-        console.log('to do list page context:', this.context);
-    }
+    // componentDidMount(){
+    //     console.log('to do list page context:', this.context);
+    // }
 
     //membuat arrow function
-    addName = () => {
+    // addName = () => {
         
-        const newName = this.state.nama;
+    //     const newName = this.state.nama;
 
-        // melihat apakah value newName terdefined atau tidak maka baris baru tidak akan ditampilkan
-        if(!newName || (typeof newName === 'string' && newName.length < 1)) return;
-        const temp = [...this.state.items, newName];
+    //     // melihat apakah value newName terdefined atau tidak maka baris baru tidak akan ditampilkan
+    //     if(!newName || (typeof newName === 'string' && newName.length < 1)) return;
+    //     const temp = [...this.state.items, newName];
 
-        //merubah nilai state
-        this.setState({items: temp, nama: ''});
-    };
+    //     //merubah nilai state
+    //     this.setState({items: temp, nama: ''});
+    // };
     onChange = (event) => {
         // set state / membuat kata yang ditulis dalam form ditampilkan ketika klik button add
         this.setState({nama: event.target.value});
-    }
+    };
 
     render() {
 
