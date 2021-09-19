@@ -1,25 +1,36 @@
 import React from 'react';
+import { ThemeContext } from './contexts/ThemeContext';
+import './TodoListPageState.css'
 
 //Belajar STATE namun disini masih menyertakan props
 
 
 function TodoListState(props) {
-    if (props.items && props.items.length < 1) {
-        return <span>No Name to Display</span>
-    }
+    // if (props.items && props.items.length < 1) {
+    //     return <span>No Name to Display</span>
+    // }
 
     return (
-        <div>
-            <h2>{props.judul}</h2>
-            <ol>
-                {props.items.map((nama) =>{
-                    return <li>{nama}</li> 
-                })}
-            </ol>
-        </div>
-
+        <ThemeContext.Consumer>
+            {(value) => {
+                console.log('Todo List State Context : ', value);
+                return (
+                    <div>
+                        <h2>{props.judul}</h2>
+                        {props.items && props.items.length < 1 ? (
+                            <span>No Name to Display</span>
+                            ) : (
+                        <ol>
+                            {props.items.map((nama) =>{
+                                return <li>{nama}</li> 
+                            })}
+                        </ol>
+                        )}
+                    </div>
+                    );
+            }}
+        </ThemeContext.Consumer>
     );
-
 }
 
 // pembuatan state
@@ -28,11 +39,18 @@ export const environment = 'development';
 
 
 class TodoListPageState extends React.Component {
+    // menerapkan penggunaan react context pada child (TodoListState Page) dari parent (ThemeContext file)
+    static contextType = ThemeContext;
     state = {
         items: [],
         // membuat state baru dengan string kosong
         nama: '',
     };
+
+    //melihat hasil context melalui componen didmount
+    componentDidMount(){
+        console.log('to do list page context:', this.context);
+    }
 
     //membuat arrow function
     addName = () => {
@@ -54,14 +72,14 @@ class TodoListPageState extends React.Component {
     render() {
 
             return (
-                <div>
+                <div className={this.context.theme==='light' ? 'light' : 'dark'}>
                     <h2>Ini adalah State</h2>
                     {/* membuat inputan baru dan ditampilkan datanya */}
                     <input value={this.state.nama} onChange={this.onChange}/>
                     {/* membuat button yg jika diklik maka muncul data baru */}
                     <button onClick={this.addName}> Add Name </button>
                     <br/>
-                    <TodoListState items={this.state.items} judul= 'Daftar Orang sukses, bahagia, soleha : ' />
+                    <TodoListState items={this.state.items} judul= 'Daftar Orang sukses, bahagia, soleha : '/>
                 </div>
             );
 

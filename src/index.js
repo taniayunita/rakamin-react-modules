@@ -7,13 +7,20 @@ import reportWebVitals from './reportWebVitals';
 import TodoListPage from './TodoListProps'
 import TodoListPageState from './TodoListState'
 import TimerComponent from './TimerComponent';
+import {ThemeProvider} from './contexts/ThemeContext';
+import Header from './Header';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <TodoListPageState/>
-    <TimerComponent/> */}
-
-    <LoginPage />
+    {/* membuat ThemeProvider sebagai parent dan yang ada didalamnya merupakan child (ini untuk hands on- state management) */}
+    
+    <ThemeProvider>
+    <Header />
+    <TodoListPageState/>
+    
+    {/* <TimerComponent/>
+    <LoginPage /> */}
+    </ThemeProvider>
     </React.StrictMode>,
   document.getElementById('root-f')
 );
