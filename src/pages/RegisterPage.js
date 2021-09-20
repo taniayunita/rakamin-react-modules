@@ -28,7 +28,7 @@ const RegisterPage = () => {
             value={confirmPassword} 
             onChange={event => setconfirmPassword(event.target.value)}/>
             <button className='Button' onClick={onRegister}>Register</button>
-            <button className='link' style={{marginTop: 16}}>Login</button>
+            
         </div>
             
       

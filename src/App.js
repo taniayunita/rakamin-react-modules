@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-
+import AuthPage from './pages/AuthPage';
 function App() {
   return (
     <div className="App">
@@ -10,7 +10,7 @@ function App() {
         <div className='App-header'>Rakamin Social</div>
         <div className='content'>
           {/* memanggil file/ component login page */}
-          <RegisterPage />
+          <AuthPage />
         </div>
       </div>
     </div>

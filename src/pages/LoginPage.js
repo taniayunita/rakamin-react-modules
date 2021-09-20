@@ -23,7 +23,7 @@ const LoginPage = () => {
             value={password} 
             onChange={event => setPassword(event.target.value)}/>
             <button className='Button' onClick={onLogin}>Login</button>
-            <button className='link' style={{marginTop: 16}}>Register</button>
+            
         </div>
             
       

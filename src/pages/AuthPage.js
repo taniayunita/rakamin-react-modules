@@ -1,4 +1,4 @@
-//untuk melakukan perpindahan halaman
+//file untuk melakukan perpindahan halaman karena belum belajar routing
 import React from 'react';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
@@ -11,6 +11,10 @@ function AuthPage() {
         <React.Fragment>
             {/* condsional rendering untuk melihat ini halaman apa */}
             {isLoginPage ? <LoginPage /> : <RegisterPage/>}
+            {/* untuk menswitch perpindahan halaman */}
+            <button className='link' style={{marginTop: 16}} onClick={()=>setIsLoginPage(!isLoginPage)}>
+                {isLoginPage ? 'Register':'Login'}
+            </button>
         </React.Fragment>
 
     );
