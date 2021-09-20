@@ -52,7 +52,8 @@ export function UserProvider(props) {
 
     };
 
-    const logout = () => {};
+    const logout = () => {setCurrentUser(null);
+    };
 
     return (
         <UserContext.Provider value={{currentUser, login, register, logout}}>

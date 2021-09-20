@@ -27,6 +27,9 @@ const RegisterPage = () => {
                //memanggil register function dari user context
                userContext.register(username,password);
 
+               //memanggil login function dari user context agar setelah regis lgsg masuk halaman beranda
+               userContext.login(username, password);
+
             }
     };
 
