@@ -1,7 +1,11 @@
 import React from 'react';
 import '../App.css'
+import { UserContext } from '../contexts/UserContext';
+
 
 const LoginPage = () => {
+    //menggunakan context
+    const userContext = React.useContext(UserContext);
     //membuat state
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -10,6 +14,7 @@ const LoginPage = () => {
     const onLogin = () => {
         // console.log('>>', username, password)
         if(username.length > 0 && password.length >4){
+            userContext.login(username, password);
             
         }
     }

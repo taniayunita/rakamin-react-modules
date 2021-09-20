@@ -1,7 +1,12 @@
 import React from 'react';
 import '../App.css'
+import { UserContext } from '../contexts/UserContext';
 
 const RegisterPage = () => {
+    //implementasi penggunaan user context
+    const userContext = React.useContext(UserContext);
+
+  
     //membuat state
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -9,12 +14,21 @@ const RegisterPage = () => {
 
     //membuat function Register
     const onRegister = () => {
-        console.log('>>', username, password, confirmPassword)
-        if(username.length > 0 && password.length >4 && password === confirmPassword){
-        
-            
-        }
-    }
+        // console.log('>>', username, password, confirmPassword)
+        if(
+            username.length > 0 && 
+            password.length >4
+            ) {
+                if(password !== confirmPassword){
+                    alert('Password yang anda masukkan tidak sama')
+                    //return akan membuat tidak lanjut ke halaman selanjutnya
+                    return;
+                }
+               //memanggil register function dari user context
+               userContext.register(username,password);
+
+            }
+    };
 
     return (
         <div className='LoginPage-container'>

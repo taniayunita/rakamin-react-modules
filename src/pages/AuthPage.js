@@ -12,7 +12,7 @@ function AuthPage() {
             {/* condsional rendering untuk melihat ini halaman apa */}
             {isLoginPage ? <LoginPage /> : <RegisterPage/>}
             {/* untuk menswitch perpindahan halaman */}
-            <button className='link' style={{marginTop: 16}} onClick={()=>setIsLoginPage(!isLoginPage)}>
+            <button className='link' style={{marginTop: 16, color: 'blue'}} onClick={()=>setIsLoginPage(!isLoginPage)}>
                 {isLoginPage ? 'Register':'Login'}
             </button>
         </React.Fragment>
