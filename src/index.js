@@ -9,11 +9,14 @@ import TodoListPageState from './TodoListState'
 import TimerComponent from './TimerComponent';
 import {ThemeProvider} from './contexts/ThemeContext';
 import Header from './Header';
+import MyClass from './sideeffect/MyClass';
+import Apps from './sideeffect/Apps';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Apps />
 
-   <App /> 
+   {/* <App />  */}
     {/* membuat ThemeProvider sebagai parent dan yang ada didalamnya merupakan child (ini untuk hands on- state management) */}
     
     {/* <ThemeProvider>
