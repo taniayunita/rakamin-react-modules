@@ -11,10 +11,11 @@ import {ThemeProvider} from './contexts/ThemeContext';
 import Header from './Header';
 import MyClass from './sideeffect/MyClass';
 import Apps from './sideeffect/Apps';
+import { News } from './pages/News';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Apps />
+    <News />
 
    {/* <App />  */}
     {/* membuat ThemeProvider sebagai parent dan yang ada didalamnya merupakan child (ini untuk hands on- state management) */}
