@@ -1,46 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import "./components/Fontawsomeicons"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
+import LoginPages from "./pages/LoginRegister/LoginPages";
+import RegisterPages from './pages/LoginRegister/RegisterPages';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { UserProvider } from "./context/UserContext";
 import './App.css';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import AuthPage from './pages/AuthPage';
-import { UserContext, UserProvider } from './contexts/UserContext';
-import BerandaPage from './pages/BerandaPage';
+import Beranda from './pages/Beranda';
 
 
 function App() {
   return (
     <UserProvider>
-      <div className="App">
-        <div className="App-container">
-          <div className='App-header'>
-            <div className="side-item"/>
-            <div className="center-item">Rakamin Social</div>
-            <div className="side-item">
-              {/* bagian ini untuk menampilkan button logout jika user sudah login */}
-              <UserContext.Consumer>
-                {/* context consumer saat ini memiliki child berupa function yg ada didalamnya */}
-                {/* function disini untuk mengecek apakah user tersedia/sudah login */}
-                {(userContext) => {
-                  return userContext.currentUser ? (
-                    <button onClick={userContext.logout}>Logout</button>
-                  ) : null;
-                }}
-              </UserContext.Consumer>
-            </div>
-          </div>
-          <UserContext.Consumer>
-            {/* context consumer saat ini memiliki child berupa function yg ada didalamnya */}
-            {/* function disini untuk mengecek apakah user tersedia/sudah login */}
-            {(userContext) => {
-              return (
-                <div className="content">
-                  {userContext.currentUser ? <BerandaPage/> : <AuthPage />}
-                </div>
-              );
-            }}
-          </UserContext.Consumer>
-        </div>
-      </div>
+      <Router>
+      <Navbar/>
+      
+        <Switch>
+          <Route path="/beranda" component={Beranda}/> />
+        </Switch>
+        
+      <Footer />
+      
+      </Router>
     </UserProvider>
   );
 }
